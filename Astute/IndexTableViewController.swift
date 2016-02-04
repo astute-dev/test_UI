@@ -14,21 +14,33 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
     var tv = UITableView()
     var courses:[String] = []
     var numStudents:[String] = []
+    var event_date:[String] = []
+    var image_name:[String] = []
+    var duration:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let settings = Settings()
-        courses = ["CSCI 476", "HIST 212", "CSCI 476", "HIST 212","CSCI 476", "HIST 212","CSCI 476", "HIST 212","HIST 212","HIST 212","HIST 212","HIST 212","HIST 212","HIST 212","HIST 212",]
-        numStudents = ["8","2","21", "3","8","2","21", "3","8","2","21", "3","8","2","21", "3","8","2","21", "3","8","2","21", "3","8","2","21", "3",]
+        courses = ["CSCI 476", "HIST 212", "CSCI 476", "HIST 212","CSCI 476", "HIST 212","CSCI 476", "HIST 212","HIST 212","HIST 212","HIST 212","HIST 212","HIST 212","HIST 212"]
+        
+        numStudents = ["8","2","21", "3","8","8","2","21", "3","8","8","2","21", "3"]
+        
+        event_date = ["1/1","1/1","12/1","12/1","12/1","12/1","1/1","12/1","12/1","12/1","12/1","12/1","12/1","12/1"]
+        
+        image_name = ["image1.jpg","image2.jpg","image3.jpg","image4.jpg","image5.jpg","image6.jpg","image3.jpg","image4.jpg","image5.jpg","image6.jpg","image3.jpg","image4.jpg","image5.jpg","image6.jpg"]
+        
+        duration = ["2", "1.5","2", "1.5","2", "1.5","2", "1.5","2", "1.5","2", "1.5","2", "1.5" ]
         
         self.view.backgroundColor = settings.lightBlue
         
-        let title = UILabel(frame: CGRect(x: 0,y: 0,width: self.view.frame.size.width, height: 100))
-        title.text = "send video"
+        let title = UILabel(frame: CGRect(x: 0,y: 0,width: self.view.frame.size.width, height: 125))
+        title.text = "Events"
         title.textAlignment = .Center
-        title.font = UIFont(name: "Avenir", size: 24)
+        title.font = UIFont(name: "Avenir", size: 28)
         title.textColor = UIColor.whiteColor()
         self.view.addSubview(title)
+
+        
         
         tv = UITableView(frame: CGRect(x: 40, y: 100, width: self.view.frame.size.width-80, height: self.view.frame.size.height-240))
         tv.delegate = self
@@ -36,7 +48,7 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
         tv.dataSource = self
         tv.backgroundColor = UIColor.clearColor()
         tv.separatorStyle = .None
-        tv.allowsMultipleSelection = true
+        tv.contentInset = UIEdgeInsetsMake(15, 0, 0, 0)
         self.view.addSubview(tv)
         
         
@@ -108,6 +120,7 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func updateTable(username: [String]) {
         courses = username
         numStudents = username
+        
         self.tv.reloadData()
     }
     
@@ -133,10 +146,27 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
         number.textColor = UIColor.whiteColor()
         number.frame.origin.y += -25
         number.textAlignment = .Right
-
         number.text = numStudents[indexPath.item] //import users
         //label.backgroundColor = UIColor.redColor()
         cell.addSubview(number)
+        
+        let date = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width-80, height: 62))
+        date.font = UIFont(name: "UbuntuTitling-Bold", size: 16)
+        date.textColor = UIColor.whiteColor()
+        //date.textAlignment = da
+        date.frame.origin.x += 150
+        date.frame.origin.y += 10
+        date.text = event_date[indexPath.item] //import users
+        cell.addSubview(date)
+        
+        
+        let image = UIImage(named: image_name[indexPath.item])
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        imageView.frame.origin.y -= 10
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        imageView.clipsToBounds = true
+        cell.addSubview(imageView)
         
         let sep = UIView(frame: CGRect(x: 0, y: 59, width: cell.frame.size.width, height: 1))
         sep.backgroundColor = UIColor.whiteColor()
@@ -146,7 +176,8 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.cellForRowAtIndexPath(indexPath)!.accessoryType = .Checkmark;
+        //tableView.cellForRowAtIndexPath(indexPath)!.accessoryType = .Checkmark;
+        //this is where we capture data and segue
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

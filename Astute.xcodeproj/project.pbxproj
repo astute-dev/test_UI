@@ -62,6 +62,12 @@
 		55A44D061C63E12D004BF7D7 /* os-x.tif in Resources */ = {isa = PBXBuildFile; fileRef = 55A44CE11C63E12D004BF7D7 /* os-x.tif */; };
 		55A44D071C63E12D004BF7D7 /* star_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 55A44CE21C63E12D004BF7D7 /* star_sel.png */; };
 		55A44D081C63E12D004BF7D7 /* star_uns.png in Resources */ = {isa = PBXBuildFile; fileRef = 55A44CE31C63E12D004BF7D7 /* star_uns.png */; };
+		55A44D0F1C63FF17004BF7D7 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55A44D091C63FF17004BF7D7 /* image4.jpg */; };
+		55A44D101C63FF17004BF7D7 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55A44D0A1C63FF17004BF7D7 /* image2.jpg */; };
+		55A44D111C63FF17004BF7D7 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55A44D0B1C63FF17004BF7D7 /* image1.jpg */; };
+		55A44D121C63FF17004BF7D7 /* image5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55A44D0C1C63FF17004BF7D7 /* image5.jpg */; };
+		55A44D131C63FF17004BF7D7 /* image6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55A44D0D1C63FF17004BF7D7 /* image6.jpg */; };
+		55A44D141C63FF17004BF7D7 /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55A44D0E1C63FF17004BF7D7 /* image3.jpg */; };
 		9029DD36DEF989084F69DDB1 /* Pods_AstuteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B49214AEBA139A72D9D41358 /* Pods_AstuteTests.framework */; };
 		C3E31451F2A596BD22BE8A59 /* Pods_AstuteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988F5C8985631C0919D72E1D /* Pods_AstuteUITests.framework */; };
 /* End PBXBuildFile section */
@@ -148,6 +154,12 @@
 		55A44CE11C63E12D004BF7D7 /* os-x.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "os-x.tif"; sourceTree = "<group>"; };
 		55A44CE21C63E12D004BF7D7 /* star_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_sel.png; sourceTree = "<group>"; };
 		55A44CE31C63E12D004BF7D7 /* star_uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_uns.png; sourceTree = "<group>"; };
+		55A44D091C63FF17004BF7D7 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
+		55A44D0A1C63FF17004BF7D7 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		55A44D0B1C63FF17004BF7D7 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		55A44D0C1C63FF17004BF7D7 /* image5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image5.jpg; sourceTree = "<group>"; };
+		55A44D0D1C63FF17004BF7D7 /* image6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image6.jpg; sourceTree = "<group>"; };
+		55A44D0E1C63FF17004BF7D7 /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
 		75D1B31600D2B1BDC1E3035A /* Pods-AstuteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstuteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstuteTests/Pods-AstuteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9616ED733BB1872FF9E3C2C2 /* Pods_Astute.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Astute.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		988F5C8985631C0919D72E1D /* Pods_AstuteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstuteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +281,12 @@
 				55A44CC71C63E12D004BF7D7 /* battery-charger.tif */,
 				55A44CC81C63E12D004BF7D7 /* default@1x.pdf */,
 				55A44CC91C63E12D004BF7D7 /* default@2x.pdf */,
+				55A44D091C63FF17004BF7D7 /* image4.jpg */,
+				55A44D0A1C63FF17004BF7D7 /* image2.jpg */,
+				55A44D0B1C63FF17004BF7D7 /* image1.jpg */,
+				55A44D0C1C63FF17004BF7D7 /* image5.jpg */,
+				55A44D0D1C63FF17004BF7D7 /* image6.jpg */,
+				55A44D0E1C63FF17004BF7D7 /* image3.jpg */,
 				55A44CCA1C63E12D004BF7D7 /* display.tif */,
 				55A44CCB1C63E12D004BF7D7 /* eyeball.png */,
 				55A44CCC1C63E12D004BF7D7 /* final-cut-pro-x.tif */,
@@ -436,13 +454,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A44CF11C63E12D004BF7D7 /* final-cut-pro-x.tif in Resources */,
+				55A44D121C63FF17004BF7D7 /* image5.jpg in Resources */,
 				55A44CEA1C63E12D004BF7D7 /* apple-watch.tif in Resources */,
 				55A44CFA1C63E12D004BF7D7 /* ipod-touch.tif in Resources */,
 				55A44D021C63E12D004BF7D7 /* macbook-pro-retina.tif in Resources */,
 				55A44CF51C63E12D004BF7D7 /* ios8.tif in Resources */,
+				55A44D111C63FF17004BF7D7 /* image1.jpg in Resources */,
 				55A44CF01C63E12D004BF7D7 /* eyeball.png in Resources */,
 				55A44CE81C63E12D004BF7D7 /* apple-pay.tif in Resources */,
 				55A44D051C63E12D004BF7D7 /* magic-trackpad.tif in Resources */,
+				55A44D141C63FF17004BF7D7 /* image3.jpg in Resources */,
 				55A44CF91C63E12D004BF7D7 /* ipod-shuffle.tif in Resources */,
 				55A44CF61C63E12D004BF7D7 /* ipad-air2.tif in Resources */,
 				55A44CEF1C63E12D004BF7D7 /* display.tif in Resources */,
@@ -467,13 +488,16 @@
 				55A44D071C63E12D004BF7D7 /* star_sel.png in Resources */,
 				55A44CF81C63E12D004BF7D7 /* ipod-nano.tif in Resources */,
 				55A44D031C63E12D004BF7D7 /* macbook.tif in Resources */,
+				55A44D0F1C63FF17004BF7D7 /* image4.jpg in Resources */,
 				55A44CE91C63E12D004BF7D7 /* apple-tv.tif in Resources */,
+				55A44D131C63FF17004BF7D7 /* image6.jpg in Resources */,
 				55A44CE71C63E12D004BF7D7 /* aperture.tif in Resources */,
 				5504AC8F1C6399EB002A638F /* Main.storyboard in Resources */,
 				55A44D061C63E12D004BF7D7 /* os-x.tif in Resources */,
 				55A44D041C63E12D004BF7D7 /* magic-mouse.tif in Resources */,
 				55A44D001C63E12D004BF7D7 /* macbook-air.tif in Resources */,
 				55A44CE61C63E12D004BF7D7 /* airport-time-capsule.tif in Resources */,
+				55A44D101C63FF17004BF7D7 /* image2.jpg in Resources */,
 				55A44CEB1C63E12D004BF7D7 /* apple-wireless-keyboard.tif in Resources */,
 				55A44CF31C63E12D004BF7D7 /* ilife.tif in Resources */,
 			);
