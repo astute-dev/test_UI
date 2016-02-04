@@ -10,11 +10,21 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
     var content: [String]!
-
+    
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var course: UILabel!
+    @IBOutlet weak var eventPic: UIImageView!
+    @IBOutlet weak var duration: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(content)
-
+        
+        self.date.text = content[2]
+        self.course.text = content[0]
+        self.eventPic.image = UIImage(named: content[3])
+        self.duration.text = content[4]
+        
         // Do any additional setup after loading the view.
     }
 

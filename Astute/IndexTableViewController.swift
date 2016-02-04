@@ -17,8 +17,9 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
     var event_date:[String] = []
     var image_name:[String] = []
     var duration:[String] = []
+    var edescription:[String] = []
     
-    var INFO:[String] = ["","","","","",""]
+    var INFO:[String] = ["","","","","","",""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,9 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
         image_name = ["image1.jpg","image2.jpg","image3.jpg","image4.jpg","image5.jpg","image6.jpg","image3.jpg","image4.jpg","image5.jpg","image6.jpg","image3.jpg","image4.jpg","image5.jpg","image6.jpg"]
         
         duration = ["2", "1.5","2", "1.5","2", "1.5","2", "1.5","2", "1.5","2", "1.5","2", "1.5" ]
+        
+        edescription = ["This is a description"]
+        
         
         self.view.backgroundColor = settings.lightBlue
         
@@ -191,7 +195,8 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 numStudents[indexPath.item],
                 event_date[indexPath.item],
                 image_name[indexPath.item],
-                duration[indexPath.item]]
+                duration[indexPath.item],
+                edescription[indexPath.item]]
         
         print(self.INFO)
         self.performSegueWithIdentifier("descriptionSegue", sender: self)
