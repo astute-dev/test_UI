@@ -53,7 +53,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         
         print("----------------------------------------------------------------------------------------")
-        print("ViewController: Initializing ViewController")
+        print("LoginViewController: Initializing LoginViewController")
         super.viewDidLoad()
         design()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
@@ -95,20 +95,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     */
     @IBAction func login(sender: AnyObject) {
         // grab username and password fields and check if they are not null
-        print("ViewController: Attempting to login...")
+        print("LoginViewController: Attempting to login...")
         let username = usernameTextOutlet.text
         let password = passTextOutlet.text
         let phone = confirmPassTextOutlet.text
         if (username!.isEmpty) || (password!.isEmpty) {
-            print("ViewController: Not all fields are filled.")
+            print("LoginViewController: Not all fields are filled.")
             jiggleLogin()
             self.displayAlert("Form Error", message: "Please make sure you have filled all fields.")
         } else {
-            print("ViewController: Sending LOGIN network request.")
+            print("LoginViewController: Sending LOGIN network request.")
             if loginBtn.titleLabel?.text == "LOGIN" {
                 if self.isRotating == false {
                     self.logo.rotate360Degrees(completionDelegate: self)
-                    print("animate logo called")
+
                     // Perhaps start a process which will refresh the UI...
                 }
                 // else try to log the user in
@@ -122,7 +122,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                             // can't make UI updates from background thread, so we need to dispatch
                             // them to the main thread
                             dispatch_async(dispatch_get_main_queue(), {
-                                print("ViewController: Login failed ~ \(message)")
+                                print("LoginViewController: Login failed ~ \(message)")
                                 self.jiggleLogin()
                                 self.displayAlert("Login Error", message: message)
                                 self.shouldStopRotating = true
@@ -133,7 +133,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                             // can't make UI updates from background thread, so we need to dispatch
                             // them to the main thread
                             dispatch_async(dispatch_get_main_queue(), {
-                                print("ViewController: Login successful, seguing towards MapViewController.")
+                                print("LoginViewController: Login successful, seguing towards IndexViewController.")
                                 self.shouldStopRotating = true
                                 self.confirmPassTextOutlet.hidden = true
                                 self.confirmPassIconLabel.hidden = true
@@ -144,19 +144,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                                 Cookies.setCookiesWithArr(cookies)
                                 
                                 self.defaults.setObject("\(username!)", forKey: "lastUser")
-                                self.performSegueWithIdentifier("loginRider", sender: self)
+                                self.performSegueWithIdentifier("indexS", sender: self)
                             })
                         }
                 })
             }
             else {
-                print("ViewController: Attempting to register...")
+                print("LoginViewController: Attempting to register...")
                 if (phone!.isEmpty) {
-                    print("ViewController: Not all fields are filled.")
+                    print("LoginViewController: Not all fields are filled.")
                     jiggleLogin()
                     self.displayAlert("Form Error", message: "Please make sure you have filled all fields.")
                 } else {
-                    print("ViewController: Sending register network request.")
+                    print("LoginViewController: Sending register network request.")
                     Network.register(
                         username!,
                         password: password!,
@@ -170,11 +170,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                                 
                                 // check if registration succeeds
                                 if(!success) {
-                                    print("ViewController: Registration Error ~ \(message)")
+                                    print("LoginViewController: Registration Error ~ \(message)")
                                     self.displayAlert("Registration Error", message: message)
                                 } else {
                                     // if it succeeded, log user in and change screens to
-                                    print("ViewController: Sending LOGIN network request.")
+                                    print("LoginViewController: Sending LOGIN network request.")
                                     Network.login(
                                         username!,
                                         password: password!,
@@ -185,7 +185,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                                                 //can't make UI updates from background thread, so we need to dispatch
                                                 // them to the main thread
                                                 dispatch_async(dispatch_get_main_queue(), {
-                                                    print("ViewController: Login failed ~ \(message)")
+                                                    print("LoginViewController: Login failed ~ \(message)")
                                                     self.displayAlert("Login Error", message: message)
                                                 })
                                             }
@@ -193,7 +193,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                                                 //can't make UI updates from background thread, so we need to dispatch
                                                 // them to the main thread
                                                 dispatch_async(dispatch_get_main_queue(), {
-                                                    print("ViewController: Login successful, seguing towards MapViewController.")
+                                                    print("LoginViewController: Login successful, seguing towards IndexViewController.")
                                                     let cookies: NSArray = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies as NSArray!
                                                     
                                                     Cookies.setCookiesWithArr(cookies)
@@ -225,7 +225,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         
         if createAcctBtn.titleLabel!.text == "Don't have an account? REGISTER" {
             
-            print("ViewController: User pressed Registration button, updating UI to show phone label.")
+            print("LoginViewController: User pressed Registration button, updating UI to show phone label.")
             unHidePhoneLabels()
             movePhoneLabelsOnScreen()
             
@@ -236,7 +236,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             loginBtn.setTitleColor(settings.darkBlue , forState: UIControlState.Normal)
         }
         else {
-            print("ViewController: User pressed Registration button, updating UI to hide phone label.")
+            print("LoginViewController: User pressed Registration button, updating UI to hide phone label.")
             movePhoneLabelsOffScreen(true)
             
             createAcctBtn.setAttributedTitle(registerMutableString, forState: UIControlState.Normal)
@@ -324,7 +324,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         }
         else {
             defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnce")
-            print("ViewController: First time launching app, displaying registration screen.")
+            print("LoginViewController: First time launching app, displaying registration screen.")
             return false
         }
     }
@@ -346,7 +346,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         if self.shouldStopRotating == false {
                         self.logo.rotate360Degrees(completionDelegate: self)
-            print("animate logo called")
+
         } else {
             self.reset()
         }
@@ -423,7 +423,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             if let _ = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
                 UIView.animateWithDuration(0.5, animations: {
                                         self.logo.alpha = 0.0
-                    print("animate logo")
+
                     
                 })
                 
@@ -464,7 +464,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                 
                 UIView.animateWithDuration(0.5, animations: {
                 self.logo.alpha = 1.0
-                    print("animate")
+
                     
                 })
                 self.keyboardUp = false
@@ -523,7 +523,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         UIView.animateWithDuration(
             0.5,
             animations: {
-                print("moving on screen")
+
+        
                 self.confirmPassTextOutlet.frame.origin.x = self.startXconfirmPassTextOutlet
                 self.confirmPassIconLabel.frame.origin.x = self.startXphonelabel
                 self.confirmPassUnderline.frame.origin.x = self.startXphoneUnderline
