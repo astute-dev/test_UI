@@ -2,8 +2,9 @@
 
 import UIKit
 
-var str = "Hello, playground"
+var arr = ["one", "two", "three"]
 
-image_name = ["image1.jpg","image2.jpg","image3.jpg","image4.jpg","image5.jpg","image6.jpg","image3.jpg","image4.jpg","image5.jpg","image6.jpg","image3.jpg","image4.jpg","image5.jpg","image6.jpg"]
+// Set element at index: 1
+arr[1] = "TWO"
 
-let count = image_name[index[path]]
+print(arr)

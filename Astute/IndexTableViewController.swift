@@ -18,6 +18,8 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
     var image_name:[String] = []
     var duration:[String] = []
     
+    var INFO:[String] = ["","","","","",""]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let settings = Settings()
@@ -178,7 +180,32 @@ class IndexTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //tableView.cellForRowAtIndexPath(indexPath)!.accessoryType = .Checkmark;
         //this is where we capture data and segue
+//        var tv = UITableView()
+//        var courses:[String] = []
+//        var numStudents:[String] = []
+//        var event_date:[String] = []
+//        var image_name:[String] = []
+//        var duration:[String] = []
+
+        self.INFO = [courses[indexPath.item],
+                numStudents[indexPath.item],
+                event_date[indexPath.item],
+                image_name[indexPath.item],
+                duration[indexPath.item]]
+        
+        print(self.INFO)
+        self.performSegueWithIdentifier("descriptionSegue", sender: self)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "descriptionSegue") {
+            
+            let tripInfo = segue.destinationViewController as! DescriptionViewController;
+            
+            tripInfo.content = self.INFO
+        }
+    }
+
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)!.accessoryType = .None;
