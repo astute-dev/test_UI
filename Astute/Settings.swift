@@ -13,7 +13,7 @@ import CoreLocation
 class Settings: UIViewController {
     
     let darkBlue = UIColor(red:0.204, green:0.286, blue:0.369, alpha:1.0)
-    let wmGreen = UIColor(hue: 0.4444, saturation: 0.8, brightness: 0.34, alpha: 1.0) /* #115740 */
+    let lightBlue = UIColor(red:0.204, green:0.596, blue:0.859, alpha:1.0)
     
 
 }

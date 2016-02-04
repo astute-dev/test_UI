@@ -144,7 +144,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                                 Cookies.setCookiesWithArr(cookies)
                                 
                                 self.defaults.setObject("\(username!)", forKey: "lastUser")
-                                self.performSegueWithIdentifier("loginRider", sender: self)
+                                self.performSegueWithIdentifier("indexS", sender: self)
                             })
                         }
                 })
