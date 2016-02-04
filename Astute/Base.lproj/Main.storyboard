@@ -16,7 +16,7 @@
         <!--Index View Controller-->
         <scene sceneID="ooP-IP-2t9">
             <objects>
-                <viewController id="JmX-zM-v7l" customClass="IndexViewController" sceneMemberID="viewController">
+                <viewController id="JmX-zM-v7l" customClass="IndexViewController" customModule="Astute" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f2q-au-8au"/>
                         <viewControllerLayoutGuide type="bottom" id="oUa-JX-O6Y"/>
